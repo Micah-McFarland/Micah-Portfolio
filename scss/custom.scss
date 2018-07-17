@@ -1,0 +1,277 @@
+@import "../bootstrap/scss/bootstrap";
+
+/* COLOR VALUES */
+$seafoam: #00EDC9;
+$skyblue: #33AAFB;
+$black: #141C2C;
+$light-black: #313846;
+$light-red: #E0395D;
+$light-gray: #F7F7F7;
+$text-color: #282F3E;
+$dots-blue: rgba(51,170,251,0.3);
+
+$font-family: Avenir, "Helvetica Neue", Helvetica, sans-serif;
+
+/* Base styles */
+
+html, body {
+  overflow-x: hidden;
+}
+
+body, h2, h3, h4, h5 {
+  font-family: $font-family;
+  color: $text-color;
+}
+
+h1 {
+  font-family: "SignPainter";
+  color: $text-color;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-weight: 600;
+  font-size: 24px;
+}
+h3 {
+  font-size: 18px;
+}
+h4 {
+  color: $light-red;
+  font-size: 16px;
+  font-weight: 600;
+}
+/// Test if `$value` is a valid direction
+/// @param {*} $value - Value to test
+/// @return {Bool}
+@function is-direction($value) {
+  $is-keyword: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+  $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+
+  @return $is-keyword or $is-angle;
+}
+
+@function legacy-direction($value) {
+  @if is-direction($value) == false {
+    @error "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be a direction.";
+  }
+
+  $conversion-map: (
+    to top          : bottom,
+    to top right    : bottom left,
+    to right top    : left bottom,
+    to right        : left,
+    to bottom right : top left,
+    to right bottom : left top,
+    to bottom       : top,
+    to bottom left  : top right,
+    to left bottom  : right top,
+    to left         : right,
+    to left top     : right bottom,
+    to top left     : bottom right
+  );
+
+  @if map-has-key($conversion-map, $value) {
+    @return map-get($conversion-map, $value);
+  }
+
+  @return 90deg - $value;
+}
+
+@mixin linear-gradient($direction, $color-stops...) {
+
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
+
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+.blue-bg {
+  @include linear-gradient(to bottom right, $seafoam, $skyblue);
+  padding-bottom: 70px;
+}
+
+.contact-card {
+  height: 360px;
+  width: 600px;
+  background: $black;
+  background: radial-gradient(at 20% 40%, $light-black, $black);
+  background: -webkit-radial-gradient(20%, 40%, $light-black, $black);
+  box-shadow: 0px 35px 99px rgba(0,0,0, 0.35);
+  margin: 0 auto;
+  margin-bottom: 70px;
+  margin-top: 70px;
+  color: #fff;
+  padding: 50px;
+  font-size: 26px;
+  line-height: 1.4em;
+}
+.contact-card h1 {
+  color: $light-red;
+}
+
+.glass-bg {
+  width: 100%;
+  background: rgba(255,255,255,0.3);
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.16);
+}
+
+.design-icon {
+  max-width: 100%;
+}
+.icon-div {
+  margin: 0 auto;
+  text-align: center;
+}
+.icon-div p {
+  margin-top: 15px;
+}
+
+.work-section {
+  margin-top: 60px;
+  margin-bottom: 70px;
+}
+
+.project-bg-left {
+  background: $light-gray;
+  width: 100%;
+  padding: 8px 30px;
+}
+.project-bg-left:after, .project-bg-left:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 9600px;
+  right: 98.4%;
+  background: $light-gray;
+}
+
+.project-bg-right {
+  background: $light-gray;
+  width: 100%;
+  padding: 8px 30px;
+}
+.project-bg-right:after, .project-bg-right:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 9600px;
+  left: 98.4%;
+  background: $light-gray;
+}
+.project-image {
+  width: 100%;
+  max-width: 600px;
+}
+.project-preview h2 {
+  padding-top: 18px;
+}
+.project-preview p {
+  font-size: 16px;
+  padding-bottom: 8px;
+}
+.project-btn {
+  background: $light-red;
+  width: 200px;
+  box-shadow: 0px 5px 16px rgba(0,0,0,0.16);
+  color: $white;
+  text-align: center;
+  padding: 10px 25px;
+  margin-bottom: -25px;
+  font-size: 18px;
+}
+
+.contact-btn, .contact-btn:hover {
+  background: $light-black;
+  width: 250px;
+  box-shadow: 0px 5px 16px rgba(0,0,0,0.16);
+  color: $white;
+  text-align: center;
+  padding: 14px 25px;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: 600;
+  display: block;
+  border-radius: 0;
+}
+
+.footer-bg {
+  margin-top: 30px;
+  margin-bottom: 12px;
+  background-image: linear-gradient(180deg, #e6e6e6 8.33%, #ffffff 8.33%, #ffffff 50%, #e6e6e6 50%, #e6e6e6 58.33%, #ffffff 58.33%, #ffffff 100%);
+  background-size: 36px 36px;
+  padding: 30px 0;
+  min-width: 100%;
+}
+
+.project-header {
+  background: $light-gray;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+section#the-challenge {
+  margin-bottom: 30px;
+}
+
+section#first-stage {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-bottom: 30px;
+  background: #fff;
+  background-image:
+    radial-gradient($dots-blue 10%, transparent 0),
+    radial-gradient($dots-blue 10%, transparent 0);
+  background-size: 15px 15px;
+  background-position: 0 0, 15px 15px;
+}
+.first-stage-text {
+  background: #fff;
+  padding:20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+  margin-bottom: 0;
+}
+.first-stage-image {
+  background: #fff;
+  padding: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+  height: 100%;
+}
+.first-stage-image img {
+  width: 100%;
+}
+section#second-stage {
+  background: #fff;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+.second-stage-text {
+  padding: 20px;
+  margin-bottom: 0;
+}
+
+section#prototype {
+  background: $light-red;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  margin-bottom: 30px;
+}
+section#the-result {
+  padding-top: 60px;
+}
+
+section#navigate-projects {
+  margin-top: 60px;
+}
+section#navigate-projects a {
+  color: $light-red;
+  font-weight: 600;
+  font-size: 20px;
+}
