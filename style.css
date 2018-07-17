@@ -8293,6 +8293,13 @@ h4 {
   color: #E0395D;
 }
 
+.contact-icons i {
+  font-size: 34px;
+  color: #E0395D;
+  padding-right: 14px;
+  margin-top: 1rem;
+}
+
 .glass-bg {
   width: 100%;
   background: rgba(255, 255, 255, 0.3);
@@ -8410,7 +8417,7 @@ section#the-challenge {
 
 section#first-stage {
   padding-top: 60px;
-  padding-bottom: 30px;
+  padding-bottom: 60px;
   margin-bottom: 30px;
   background: #fff;
   background-image: radial-gradient(rgba(51, 170, 251, 0.3) 10%, transparent 0), radial-gradient(rgba(51, 170, 251, 0.3) 10%, transparent 0);

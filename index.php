@@ -14,6 +14,11 @@ get_header();
       <div class="contact-card">
         <div>
           <?php echo get('frontpage_contact_card_text'); ?>
+          <div class="contact-icons">
+            <a href="https://twitter.com/Micah_McFarland"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/micahmcfarland/"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:micah.mcfarland@gmail.com"><i class="far fa-envelope"></i></a>micah.mcfarland@gmail.com
+          </div>
         </div>
       </div>
     </div>
@@ -78,7 +83,7 @@ get_header();
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-bottom: 50px;">
       <div class="col-md-12">
         <div class="project-bg-right" style="margin-right:-20%;">
           <div class="row justify-content-start" style="display: flex; align-items: center;">
