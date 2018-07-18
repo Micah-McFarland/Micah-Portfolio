@@ -8246,7 +8246,7 @@ body, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-family: "SignPainter";
+  font-family: "Yellowtail", cursive;
   color: #282F3E;
   margin-bottom: 1rem;
 }
@@ -8296,6 +8296,7 @@ label {
 
 .contact-card h1 {
   color: #E0395D;
+  font-size: 50px;
 }
 
 .contact-icons i {
@@ -8313,6 +8314,7 @@ label {
 
 .design-icon {
   max-width: 100%;
+  width: 200px;
 }
 
 .icon-div {
@@ -8364,6 +8366,8 @@ label {
 .project-image {
   width: 100%;
   max-width: 600px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.16);
+  margin-top: 10px;
 }
 
 .project-preview h2 {
@@ -8384,6 +8388,18 @@ label {
   padding: 10px 25px;
   margin-bottom: -25px;
   font-size: 18px;
+}
+
+.project-btn:hover {
+  background: #c71f43;
+  text-decoration: none;
+  color: #fff;
+}
+
+.project-btn:active {
+  background: #b11c3c;
+  text-decoration: none;
+  color: #fff;
 }
 
 .contact-btn, .contact-btn:hover {
@@ -8418,6 +8434,10 @@ a:not([href]):not([tabindex]).contact-btn {
   padding-top: 60px;
   padding-bottom: 30px;
   margin-bottom: 30px;
+}
+
+.project-header h2 {
+  font-size: 34px;
 }
 
 section#the-challenge {
@@ -8490,6 +8510,50 @@ section#navigate-projects a {
   background: #E0395D;
   border-radius: 0;
   font-family: Avenir, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/******** Media Queries ************/
+@media (max-width: 768px) {
+  .project-bg-right:after, .project-bg-right:before {
+    left: 97%;
+  }
+
+  .project-bg-left:after, .project-bg-left:before {
+    right: 97%;
+  }
+
+  .contact-card {
+    width: 80%;
+    height: auto;
+    padding: 30px;
+    font-size: 16px;
+  }
+
+  .contact-card h1 {
+    font-size: 36px;
+  }
+
+  .contact-card p {
+    margin-bottom: 4px;
+  }
+
+  .contact-icons i {
+    font-size: 24px;
+    padding-right: 6px;
+  }
+}
+@media (max-width: 450px) {
+  .design-icon {
+    width: 60px;
+  }
+
+  .project-bg-right:after, .project-bg-right:before {
+    left: 96%;
+  }
+
+  .project-bg-left:after, .project-bg-left:before {
+    right: 96%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

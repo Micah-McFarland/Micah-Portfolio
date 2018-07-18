@@ -12,6 +12,7 @@ $dots-blue: rgba(51,170,251,0.3);
 
 $font-family: Avenir, "Helvetica Neue", Helvetica, sans-serif;
 
+
 /* Base styles */
 
 html, body {
@@ -24,7 +25,7 @@ body, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-family: "SignPainter";
+  font-family: 'Yellowtail', cursive;
   color: $text-color;
   margin-bottom: 1rem;
 }
@@ -116,6 +117,7 @@ label {
 }
 .contact-card h1 {
   color: $light-red;
+  font-size: 50px;
 }
 .contact-icons i {
   font-size: 34px;
@@ -132,6 +134,7 @@ label {
 
 .design-icon {
   max-width: 100%;
+  width: 200px;
 }
 .icon-div {
   margin: 0 auto;
@@ -178,6 +181,8 @@ label {
 .project-image {
   width: 100%;
   max-width: 600px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.16);
+  margin-top: 10px;
 }
 .project-preview h2 {
   padding-top: 18px;
@@ -195,6 +200,16 @@ label {
   padding: 10px 25px;
   margin-bottom: -25px;
   font-size: 18px;
+}
+.project-btn:hover {
+  background: darken($light-red, 10%);
+  text-decoration: none;
+  color: $white;
+}
+.project-btn:active {
+  background: darken($light-red, 15%);
+  text-decoration: none;
+  color: $white;
 }
 
 .contact-btn, .contact-btn:hover {
@@ -228,6 +243,9 @@ a:not([href]):not([tabindex]).contact-btn {
   padding-top: 60px;
   padding-bottom: 30px;
   margin-bottom: 30px;
+}
+.project-header h2 {
+  font-size: 34px;
 }
 
 section#the-challenge {
@@ -295,4 +313,43 @@ section#navigate-projects a {
   background: $light-red;
   border-radius: 0;
   font-family: $font-family;
+}
+
+
+/******** Media Queries ************/
+
+@media(max-width:768px) {
+  .project-bg-right:after, .project-bg-right:before {
+    left: 97%;
+  }
+  .project-bg-left:after, .project-bg-left:before {
+    right: 97%;
+  }
+  .contact-card {
+    width: 80%;
+    height: auto;
+    padding: 30px;
+    font-size: 16px;
+  }
+  .contact-card h1 {
+    font-size: 36px;
+  }
+  .contact-card p {
+    margin-bottom: 4px;
+  }
+  .contact-icons i {
+    font-size: 24px;
+    padding-right: 6px;
+  }
+}
+@media(max-width: 450px) {
+  .design-icon {
+    width: 60px;
+  }
+  .project-bg-right:after, .project-bg-right:before {
+    left: 96%;
+  }
+  .project-bg-left:after, .project-bg-left:before {
+    right: 96%;
+  }
 }

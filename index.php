@@ -14,7 +14,7 @@ get_header();
           <div class="contact-icons">
             <a href="https://twitter.com/Micah_McFarland"><i class="fab fa-twitter"></i></a>
             <a href="https://www.instagram.com/micahmcfarland/"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:micah.mcfarland@gmail.com"><i class="far fa-envelope"></i></a><p style="font-size:14px; font-weight:200;">micah.mcfarland@gmail.com</p>
+            <a href="mailto:micah.mcfarland@gmail.com"><i class="far fa-envelope"></i></a><span style="font-size:14px; font-weight:200;">micah.mcfarland@gmail.com</span>
           </div>
         </div>
       </div>
@@ -29,24 +29,24 @@ get_header();
         </div>
       </div>
       <div class="row" style="display: flex; align-items: center;">
-          <div class="col-sm-3 icon-div justify-content-end">
+          <div class="col icon-div justify-content-end">
             <img class="design-icon" src="<?php echo get('section_image_1'); ?>"/>
           </div>
-          <div class="col-sm-3 icon-div">
+          <div class="col icon-div">
             <img class="design-icon" src="<?php echo get('section_image_2'); ?>"/>
           </div>
-          <div class="col-sm-3 icon-div justify-content-start">
+          <div class="col icon-div justify-content-start">
             <img class="design-icon" src="<?php echo get('section_image_3'); ?>"/>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-3 icon-div">
+          <div class="col icon-div">
             <p style="margin-left: -6.5vw;">Interface Design</p>
           </div>
-          <div class="col-sm-3 icon-div">
+          <div class="col icon-div">
             <p>Web Design</p>
           </div>
-          <div class="col-sm-3 icon-div">
+          <div class="col icon-div">
             <p style="margin-left: -4.5vw;">Graphic Design</p>
           </div>
         </div>
@@ -75,7 +75,7 @@ get_header();
               <h4><?php echo get('project_date_1'); ?></h4>
               <?php echo get('project_blurb_1'); ?>
             </div>
-            <a class="project-btn" style="margin-left: 75%;" href="<?php get_template_directory_uri().'/live-events-page' ?>">See the story</a>
+            <a class="project-btn" style="margin-right: 4%;" href="/live-events-page">See the story</a>
           </div>
         </div>
       </div>
@@ -84,16 +84,16 @@ get_header();
       <div class="col-md-12">
         <div class="project-bg-right" style="margin-right:-20%;">
           <div class="row justify-content-start" style="display: flex; align-items: center;">
-            <div class="col-md-4 project-preview">
+            <div class="col-md-4 order-md-1 order-2 project-preview">
               <h2><?php echo get('project_title_2'); ?></h2>
               <h3><i><?php echo get('project_client_2'); ?></i></h3>
               <h4><?php echo get('project_date_2'); ?></h4>
               <?php echo get('project_blurb_2'); ?>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-7 order-md-2 order-1">
               <img class="project-image" src="<?php echo get('project_image_2'); ?>"/>
             </div>
-            <div class="project-btn" style="margin-left: 4%;">See the story</div>
+            <a class="project-btn order-12" style="margin-left: 4%;" href="/responsive-web-recorder">See the story</a>
           </div>
         </div>
       </div>
@@ -111,7 +111,7 @@ get_header();
               <h4><?php echo get('project_date_3'); ?></h4>
               <?php echo get('project_blurb_3'); ?>
             </div>
-            <div class="project-btn" style="margin-left: 75%;">See the story</div>
+            <a class="project-btn" style="margin-right: 4%;" href="/kzoinnovations-com">See the story</a>
           </div>
         </div>
       </div>

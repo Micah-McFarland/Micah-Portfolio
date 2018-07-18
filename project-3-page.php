@@ -1,5 +1,5 @@
 <?php
-/*Template Name: Project page - Live Events Page
+/*Template Name: Project page - KZO site
 Template Post Type: post, page
 */
 get_header();
@@ -56,25 +56,11 @@ get_header();
 </section>
 <section id="prototype">
   <div class="container">
-    <div class="row justify-content-between align-items-center">
-      <div class="col-sm-12 first-stage-text">
-        <?php echo get('project_prototype_description'); ?>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12 first-stage-image embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://xd.adobe.com/embed/868e95b7-fcb5-4c7c-4763-36fefffb4eac-f0bf/" width="1280" height="auto" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="the-result">
-  <div class="container">
     <div class="row justify-content-between align-items-end">
       <div class="col-sm-8 first-stage-image">
         <img class="" src="<?php echo get('project_result_image'); ?>"/>
       </div>
-      <div class="col-sm-3 second-stage-text">
+      <div class="col-sm-3 first-stage-text">
         <?php echo get('project_result_description'); ?>
       </div>
     </div>
@@ -82,11 +68,11 @@ get_header();
 </section>
 <section id="navigate-projects" class="container">
   <div class="row justify-content-between">
-    <div class="col-sm-4">
+    <div class="col-sm-4" style="text-align:left;">
+      <a href="/responsive-web-recorder"><i class="fas fa-arrow-left"></i> Previous Project</a>
+      <?php echo get('project_previous'); ?>
     </div>
-    <div class="col-sm-4" style="text-align:right;">
-      <a href="/responsive-web-recorder">Next Project <i class="fas fa-arrow-right"></i></a>
-      <?php echo get('project_next'); ?>
+    <div class="col-sm-4">
     </div>
   </div>
 </section>
