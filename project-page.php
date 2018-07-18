@@ -1,16 +1,8 @@
 <?php
-/*Template Name: Project page
+/*Template Name: Project page - Live Events Page
 Template Post Type: post, page
 */
 get_header();
-?>
-<?php
-$first_stage_check = get('checkboxes_first_stage');
-$second_stage_check = get('checkboxes_second_stage');
-$prototype_check = get('checkboxes_prototype');
-$result_check = get('checkboxes_result');
-$previous_check = get('checkboxes_previous');
-$next_check = get('checkboxes_next');
 ?>
 <body>
 <section class="project-header">
@@ -38,7 +30,7 @@ $next_check = get('checkboxes_next');
     </div>
   </div>
 </section>
-<section id="first-stage" <?php if($first_stage_check == false){echo 'style="display:none"';} ?>>
+<section id="first-stage">
   <div class="container">
     <div class="row justify-content-between align-items-center">
       <div class="col-sm-3 first-stage-text">
@@ -50,7 +42,7 @@ $next_check = get('checkboxes_next');
     </div>
   </div>
 </section>
-<section id="second-stage" <?php if($second_stage_check == false){echo 'style="display:none"';} ?>>
+<section id="second-stage">
   <div class="container">
     <div class="row justify-content-between align-items-center">
       <div class="col-sm-8 first-stage-image">
@@ -62,22 +54,21 @@ $next_check = get('checkboxes_next');
     </div>
   </div>
 </section>
-<section id="prototype" <?php if($prototype_check == false){echo 'style="display:none"';} ?>>
+<section id="prototype">
   <div class="container">
     <div class="row justify-content-between align-items-center">
-      <div class="col-sm-3 first-stage-text">
+      <div class="col-sm-12 first-stage-text">
         <?php echo get('project_prototype_description'); ?>
       </div>
-      <div <?php if(get('project_prototype_link') == null) { echo 'style="display:none;"'; } ?> class="col-sm-8 first-stage-image">
-        <?php echo get('project_prototype_link'); ?>
-      </div>
-      <div <?php if(get('project_prototype_image') == null) { echo 'style="display:none;"'; } ?> class="col-sm-8 first-stage-image">
-        <img class="" src="<?php echo get('project_prototype_image'); ?>"/>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 first-stage-image embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://xd.adobe.com/embed/868e95b7-fcb5-4c7c-4763-36fefffb4eac-f0bf/" width="1280" height="auto" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
       </div>
     </div>
   </div>
 </section>
-<section id="the-result" <?php if($result_check == false){echo 'style="display:none"';} ?>>
+<section id="the-result">
   <div class="container">
     <div class="row justify-content-between align-items-end">
       <div class="col-sm-8 first-stage-image">
@@ -91,12 +82,10 @@ $next_check = get('checkboxes_next');
 </section>
 <section id="navigate-projects" class="container">
   <div class="row justify-content-between">
-    <div class="col-sm-4" style="text-align:left;" <?php if($previous_check == false){echo 'style="display:none"';} ?>>
-      <a href="#"><i class="fas fa-arrow-left"></i>Previous Project</a>
-      <?php echo get('project_previous'); ?>
+    <div class="col-sm-4">
     </div>
-    <div class="col-sm-4" style="text-align:right;" <?php if($next_check == false){echo 'style="display:none"';} ?>>
-      <a href="#">Next Project<i class="fas fa-arrow-right"></i></a>
+    <div class="col-sm-4" style="text-align:right;">
+      <a href="#">Next Project <i class="fas fa-arrow-right"></i></a>
       <?php echo get('project_next'); ?>
     </div>
   </div>

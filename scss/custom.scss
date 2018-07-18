@@ -40,6 +40,11 @@ h4 {
   font-size: 16px;
   font-weight: 600;
 }
+
+label {
+  font-family: $font-family;
+  color: $light-black;
+}
 /// Test if `$value` is a valid direction
 /// @param {*} $value - Value to test
 /// @return {Bool}
@@ -116,7 +121,7 @@ h4 {
   font-size: 34px;
   color: $light-red;
   padding-right: 14px;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .glass-bg {
@@ -205,6 +210,9 @@ h4 {
   display: block;
   border-radius: 0;
 }
+a:not([href]):not([tabindex]).contact-btn {
+  color: $white;
+}
 
 .footer-bg {
   margin-top: 30px;
@@ -241,7 +249,7 @@ section#first-stage {
   background: #fff;
   padding:20px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16);
-  margin-bottom: 0;
+  margin-bottom: 30px;
 }
 .first-stage-image {
   background: #fff;
@@ -280,4 +288,11 @@ section#navigate-projects a {
   color: $light-red;
   font-weight: 600;
   font-size: 20px;
+}
+
+.hs-button {
+  text-align: center;
+  background: $light-red;
+  border-radius: 0;
+  font-family: $font-family;
 }

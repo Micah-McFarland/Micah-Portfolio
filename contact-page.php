@@ -1,6 +1,7 @@
 <?php
 /*Template Name: Contact
 */
+get_header();
 ?>
 <head>
 </head>
@@ -9,7 +10,13 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <?php echo the_content(); ?>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <?php echo get('contact_textbox'); ?>
       </div>
     </div>
   </div>
+
+<?php get_footer(); ?>

@@ -8266,6 +8266,11 @@ h4 {
   font-weight: 600;
 }
 
+label {
+  font-family: Avenir, "Helvetica Neue", Helvetica, sans-serif;
+  color: #313846;
+}
+
 .blue-bg {
   background: #00EDC9;
   background: -webkit-linear-gradient(top left, #00EDC9, #33AAFB);
@@ -8297,7 +8302,7 @@ h4 {
   font-size: 34px;
   color: #E0395D;
   padding-right: 14px;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .glass-bg {
@@ -8395,6 +8400,10 @@ h4 {
   border-radius: 0;
 }
 
+a:not([href]):not([tabindex]).contact-btn {
+  color: #fff;
+}
+
 .footer-bg {
   margin-top: 30px;
   margin-bottom: 12px;
@@ -8429,7 +8438,7 @@ section#first-stage {
   background: #fff;
   padding: 20px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  margin-bottom: 0;
+  margin-bottom: 30px;
 }
 
 .first-stage-image {
@@ -8474,6 +8483,13 @@ section#navigate-projects a {
   color: #E0395D;
   font-weight: 600;
   font-size: 20px;
+}
+
+.hs-button {
+  text-align: center;
+  background: #E0395D;
+  border-radius: 0;
+  font-family: Avenir, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 /*# sourceMappingURL=style.css.map */

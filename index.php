@@ -4,9 +4,6 @@
 get_header();
 ?>
 
-<head>
-</head>
-
 <body>
 <section id="contact-card" class="blue-bg">
   <div class="container">
@@ -17,7 +14,7 @@ get_header();
           <div class="contact-icons">
             <a href="https://twitter.com/Micah_McFarland"><i class="fab fa-twitter"></i></a>
             <a href="https://www.instagram.com/micahmcfarland/"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:micah.mcfarland@gmail.com"><i class="far fa-envelope"></i></a>micah.mcfarland@gmail.com
+            <a href="mailto:micah.mcfarland@gmail.com"><i class="far fa-envelope"></i></a><p style="font-size:14px; font-weight:200;">micah.mcfarland@gmail.com</p>
           </div>
         </div>
       </div>
@@ -78,7 +75,7 @@ get_header();
               <h4><?php echo get('project_date_1'); ?></h4>
               <?php echo get('project_blurb_1'); ?>
             </div>
-            <div class="project-btn" style="margin-left: 75%;">See the story</div>
+            <a class="project-btn" style="margin-left: 75%;" href="<?php get_template_directory_uri().'/live-events-page' ?>">See the story</a>
           </div>
         </div>
       </div>
