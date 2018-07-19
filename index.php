@@ -4,7 +4,6 @@
 get_header();
 ?>
 
-<body>
 <section id="contact-card" class="blue-bg">
   <div class="container">
     <div class="row">

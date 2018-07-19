@@ -4,7 +4,6 @@ Template Post Type: post, page
 */
 get_header();
 ?>
-<body>
 <section class="project-header">
   <div class="container">
     <div class="row">
@@ -82,9 +81,9 @@ get_header();
 </section>
 <section id="navigate-projects" class="container">
   <div class="row justify-content-between">
-    <div class="col-sm-4">
+    <div class="col">
     </div>
-    <div class="col-sm-4" style="text-align:right;">
+    <div class="col" style="text-align:right;">
       <a href="/responsive-web-recorder">Next Project <i class="fas fa-arrow-right"></i></a>
       <?php echo get('project_next'); ?>
     </div>

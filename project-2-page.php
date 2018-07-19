@@ -4,15 +4,6 @@ Template Post Type: post, page
 */
 get_header();
 ?>
-<?php
-$first_stage_check = get('checkboxes_first_stage');
-$second_stage_check = get('checkboxes_second_stage');
-$prototype_check = get('checkboxes_prototype');
-$result_check = get('checkboxes_result');
-$previous_check = get('checkboxes_previous');
-$next_check = get('checkboxes_next');
-?>
-<body>
 <section class="project-header">
   <div class="container">
     <div class="row">
@@ -87,11 +78,11 @@ $next_check = get('checkboxes_next');
 </section>
 <section id="navigate-projects" class="container">
   <div class="row justify-content-between">
-    <div class="col-sm-4" style="text-align:left;">
+    <div class="col" style="text-align:left;">
       <a href="/live-events-page"><i class="fas fa-arrow-left"></i> Previous Project</a>
       <?php echo get('project_previous'); ?>
     </div>
-    <div class="col-sm-4" style="text-align:right;">
+    <div class="col" style="text-align:right;">
       <a href="/kzoinnovations-com">Next Project <i class="fas fa-arrow-right"></i></a>
       <?php echo get('project_next'); ?>
     </div>
